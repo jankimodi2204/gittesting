@@ -63,12 +63,12 @@ var config = convict({
         username: {
             doc: 'git user name',
             format: String,
-            default: 'GitCodeGeneratorScheduler'
+            default: 'jankimodi2204'
         },
         password: {
             doc: 'git password',
             format: String,
-            default: 'GitCodeGeneratorScheduler'
+            default: 'Jankimodi@2210'
         },
     },
     couchbase: {

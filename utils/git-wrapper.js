@@ -1,6 +1,6 @@
 const config = require('../config');
 const _ = require('lodash');
-const git = require('simple-git');
+var GIT = require('simple-git');
 const q = require('q');
 const logger = require('./logger');
 
@@ -11,22 +11,16 @@ const logger = require('./logger');
  *          Directory path for content update.
  */
 
-
-/*     let USER = config.get('git.username');
-    let PASS = config.get('git.password');
-    let REPO = 'https://gitlabbeta.dynamic1001.com/users/sign_in//';
-    let remote = `https://gitlabbeta.dynamic1001.com/users/sign_in//${USER}:${PASS}@${REPO}`;
- */
-
-var _getUpdate = function (path) {
-    q.Promise(function (resolve, reject) {
+const _getUpdate = function (gitPath) {
+    return new Promise((resolve, reject) => {
+        var gitObj = GIT(gitPath);
+        console.log(gitObj);
         var option = {
-            "username": config.get('git.username'),
-            "password": config.get('git.password'),
-            "accept": "working"
+            username: config.get('git.username'),
+            password: config.get('git.password')
         };
-        if (!_.isUndefined(path)) {
-            git(path).pull(remote, branch, option, (error, result) => {
+        if (!_.isUndefined(gitPath)) {
+            gitObj.pull('origin', 'master', option, (error, result) => {
                 if (!_.isUndefined(error) && error !== null) {
                     reject(error);
                 }
@@ -40,8 +34,8 @@ var _getUpdate = function (path) {
     });
 }
 
-var _Commit = function (path) {
-    q.Promise(function (resolve, reject) {
+const _Commit = function (path) {
+    return new Promise((resolve, reject) => {
         logger.info('_Commit path : ' + path);
         var option = {
             "username": config.get('git.username'),
@@ -65,8 +59,8 @@ var _Commit = function (path) {
     });
 }
 
-var _clean = function (path) {
-    q.Promise(function (resolve, reject) {
+const _clean = function (path) {
+    return new Promise((resolve, reject) => {
         logger.info('clean the repositery');
         var option = {
             "username": config.get('git.username'),

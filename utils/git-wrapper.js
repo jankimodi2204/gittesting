@@ -82,8 +82,22 @@ const _clean = function (path) {
     });
 }
 
+const _status = (gitPath) => {
+    return new Promise((resolve, reject) => {
+        let gitObj = GIT(gitPath);
+        gitObj.status((error, result) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(result);
+            }
+        });
+    });
+}
+
 module.exports = {
     getUpdate: _getUpdate,
     Commit: _Commit,
-    Clean: _clean
+    Clean: _clean,
+    Status: __status
 };

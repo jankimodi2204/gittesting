@@ -261,7 +261,7 @@ var _getNextVendorControlCounterKey = function(bucketName) {
 		deffered.reject(error);
 	});
 	return deffered.promise;
-}
+}     
 
 module.exports = {
 	getDocument : _getDocument,

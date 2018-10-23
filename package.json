@@ -1,0 +1,19 @@
+{
+  "name": "gittesting",
+  "version": "1.0.0",
+  "description": "Test git from nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jankimodi2204/gittesting.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jankimodi2204/gittesting/issues"
+  },
+  "homepage": "https://github.com/jankimodi2204/gittesting#readme"
+}

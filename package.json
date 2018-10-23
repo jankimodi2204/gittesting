@@ -10,10 +10,26 @@
     "type": "git",
     "url": "git+https://github.com/jankimodi2204/gittesting.git"
   },
-  "author": "",
+  "author": "Janki Modi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jankimodi2204/gittesting/issues"
   },
-  "homepage": "https://github.com/jankimodi2204/gittesting#readme"
+  "homepage": "https://github.com/jankimodi2204/gittesting#readme",
+  "dependencies": {
+    "convict": "^4.0.2",
+    "couchbase": "^2.6.0",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "git": "^0.1.5",
+    "jsonschema": "^1.2.2",
+    "lodash": "^4.17.10",
+    "logger": "0.0.1",
+    "morgan": "^1.9.0",
+    "q": "^1.5.1",
+    "raven": "^2.4.2",
+    "restler": "^3.4.0",
+    "simple-git": "^1.105.0",
+    "winston": "^2.4.1"
+}
 }

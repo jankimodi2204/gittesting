@@ -8,6 +8,7 @@ try {
         console.log("Done" + JSON.stringify(result,null, '\t'));
     }, function (error) {
         console.log(error);
+        
     });    
 } catch (error) {
     console.log(error);
